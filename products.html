@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    a {
+      color: white;
+      padding: 20px;
+      text-decoration: none;
+      border: none;
+    }
+
+    #nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    #nav div {
+      background-color: rgb(153, 90, 22);
+    }
+
+    #logo {
+      background-color: rgb(101, 51, 7);
+      color: rgb(0, 0, 0);
+      font-size: 30pt;
+      /* Adjusted font size for better responsiveness */
+    }
+
+    #nav a {
+      margin-right: 15px;
+      color: white;
+      text-decoration: none;
+    }
+
+    #about {
+      text-align: right;
+    }
+
+    .about-us {
+      padding-top: 56px;
+      /* Adjusted padding for fixed navbar */
+    }
+
+    .text {
+      text-align: center;
+    }
+
+    .about h1 {
+      margin-bottom: 20px;
+    }
+
+    .about img {
+      width: 100%;
+      /* Make images responsive within their containers */
+      max-width: 200px;
+      /* Set a max-width to prevent images from becoming too large on smaller screens */
+      height: auto;
+      /* Maintain aspect ratio */
+      display: inline-block;
+    }
+
+    .hire {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    function getCurrentDateTime() {
+      var now = new Date();
+      var dateTimeString = now.toLocaleString();
+      document.getElementById('datetime').innerHTML = dateTimeString;
+    }
+  </script>
+</head>
+
+<body style="background-color: #f3c48fdb;">
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(153, 90, 22)" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" id="logo" href="#">CoffeeBean</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="sitemap.html">Site Map</a></li>
+          <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="Cart.html">Cart</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br><br><br><br>
+
+  <section class="about-us">
+    <div class="about">
+
+
+      <section class="container mt-4">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="colombia.jpg" class="card-img-top" alt="Colombian Bean">
+              <div class="card-body">
+                <h5 class="card-title">Colombian Beans</h5>
+                <a href="CC.html" class="btn btn-primary" style="background: brown;">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="brazil.jpg" class="card-img-top" alt="Brazilian Bean">
+              <div class="card-body">
+                <h5 class="card-title">Brazilian Beans</h5>
+                <a href="BC.html" class="btn btn-primary" style="background: brown;">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="eth.jpg" class="card-img-top" alt="Ethiopian Bean">
+              <div class="card-body">
+                <h5 class="card-title">Ethiopian Beans</h5>
+                <a href="EtC.html" class="btn btn-primary" style="background: brown;">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </section>
+  <span id="datetime"></span>
+  <script>
+    getCurrentDateTime();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

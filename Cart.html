@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Order Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   
+        
+    <style>
+        a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        #nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #nav div {
+            background-color: rgb(153, 90, 22);
+        }
+
+        #logo {
+            background-color: rgb(101, 51, 7);
+            color: rgb(0, 0, 0);
+            font-size: 40pt;
+        }
+
+        #nav a {
+            margin-right: 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        #about {
+            text-align: right;
+        }
+
+        @media (max-width: 576px) {
+            .jumbotron {
+                font-size: 150%;
+            }
+
+            #logo {
+                font-size: 20pt;
+            }
+
+            #nav a {
+                margin-right: 5px;
+            }
+
+            #nav {
+                padding: 5px;
+            }
+        }
+    
+    
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: rgb(153, 90, 22);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(101, 51, 7);
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        function getCurrentDateTime() {
+            var now = new Date();
+            var dateTimeString = now.toLocaleString();
+            document.getElementById('datetime').innerHTML = dateTimeString;
+        }
+    </script>
+</head>
+
+<body style="background-color: #f3c48fdb;">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(153, 90, 22)">
+        <div class="container-fluid">
+            <a class="navbar-brand" id="logo" href="#">CoffeeBean</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sitemap.html">Site Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Cart.html">Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <form id="orderForm">
+        <h1>Bean Order</h1>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1" required>
+
+        <label for="quantity">Item Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+
+        <label for="income">Income:</label>
+        <input type="number" id="income" name="income" min="0" required>
+
+        <label>Preferred Coffee Type:</label>
+        <input type="radio" id="Colombian Bean" name="coffeeType" value="Colombian" required>
+        <label for="Colombian Bean">Colombian Bean</label>
+
+        <input type="radio" id="Brazilian Bean" name="coffeeType" value="Brazilian" required>
+        <label for="Brazilian Bean">Brazilian Bean</label>
+
+        <input type="radio" id="Ethiopian Bean" name="coffeeType" value="Ethiopian" required>
+        <label for="Ethiopian Bean">Ethiopian Bean</label>
+
+        <label>Additional Options:</label>
+        <input type="checkbox" id="Cardamom" name="options" value="Cardamom">
+        <label for="sugar">Cardamom</label>
+
+        <input type="checkbox" id="Cinnamon" name="options" value="Cinnamon">
+        <label for="cream">Cinnamon</label>
+
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments"></textarea>
+
+        <button type="button" onclick="validateForm()">Submit Order</button>
+
+        <div id="errorMessages" class="error"></div>
+
+        <label for="report">Order Summary:</label>
+        <textarea id="report" name="report" readonly></textarea>
+    </form>
+    <span id="datetime"></span>
+    <script>
+        function validateForm() {
+            // Validation logic goes here
+            let isValid = true;
+            const errorMessages = [];
+
+            // Example: Validate name (not empty)
+            const name = document.getElementById('name').value;
+            if (name.trim() === '') {
+                errorMessages.push('Name cannot be empty.');
+                isValid = false;
+            }
+            const email = document.getElementById('email').value;
+            if (email.trim() === '') {
+                errorMessages.push('Email cannot be empty.');
+                isValid = false;
+            }
+            const age = document.getElementById('age').value;
+            if (age.trim() === '') {
+                errorMessages.push('age cannot be empty.');
+                isValid = false;
+            }
+            
+            // Other validations go here...
+            
+            if (isValid) {
+                // If validation succeeds, perform calculations
+                calculateOrder();
+            } else {
+                // If validation fails, display error messages
+                displayErrorMessages(errorMessages);
+            }
+        }
+
+        function displayErrorMessages(messages) {
+            const errorMessageContainer = document.getElementById('errorMessages');
+            errorMessageContainer.innerHTML = '';
+
+            messages.forEach(message => {
+                const errorDiv = document.createElement('div');
+                errorDiv.textContent = message;
+                errorMessageContainer.appendChild(errorDiv);
+            });
+        }
+
+        function calculateOrder() {
+            // Calculation logic goes here
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const age = document.getElementById('age').value;
+            const quantity = document.getElementById('quantity').value;
+            const income = document.getElementById('income').value;
+            const coffeeType = document.querySelector('input[name="coffeeType"]:checked').value;
+            const options = Array.from(document.querySelectorAll('input[name="options"]:checked')).map(checkbox => checkbox.value);
+            const comments = document.getElementById('comments').value;
+
+            // Example: Calculate total cost
+            const totalCost = quantity * 2.5;
+
+            // Display the report in the textarea
+            const report = `Name: ${name}\nEmail: ${email}\nAge: ${age}\nQuantity: ${quantity}\nIncome: ${income}\nCoffee Type: ${coffeeType}\nOptions: ${options.join(', ')}\nComments: ${comments}\nTotal Cost: $${totalCost.toFixed(2)}`;
+            document.getElementById('report').value = report;
+        }
+
+        // Display date and time
+        function displayDateTime() {
+            const dateTimeElement = document.getElementById('datetime');
+            const now = new Date();
+            const dateTimeString = `Date: ${now.toDateString()}, Time: ${now.toLocaleTimeString()}`;
+            dateTimeElement.textContent = dateTimeString;
+        }
+
+        // Call displayDateTime function when the page loads
+        displayDateTime();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

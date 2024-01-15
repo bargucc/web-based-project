@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 56px;
+      /* Adjusted padding for fixed navbar */
+      background-color: #e3e2e2db;
+    }
+
+    header {
+      background-color: #cfcecedb;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .Customersreview {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #cfcecedb;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .review {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+
+    .review h3 {
+      color: #333;
+    }
+
+    .review p {
+      color: #555;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #cfcecedb;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px;
+      border-radius: 4px;
+    }
+
+    .form-container button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    a {
+      color: white;
+      padding: 20px;
+      text-decoration: none;
+    }
+
+    #nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    #nav div {
+      background-color: rgb(153, 90, 22);
+    }
+
+    #logo {
+      background-color: rgb(101, 51, 7);
+      color: rgb(0, 0, 0);
+      font-size: 40pt;
+    }
+
+    #nav a {
+      margin-right: 15px;
+      color: white;
+      text-decoration: none;
+    }
+
+    #about {
+      text-align: right;
+    }
+
+    a {
+      color: white;
+      padding: 20px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 576px) {
+      .jumbotron {
+        font-size: 150%;
+      }
+    }
+  </style>
+  <script>
+    function getCurrentDateTime() {
+      var now = new Date();
+      var dateTimeString = now.toLocaleString();
+      document.getElementById('datetime').innerHTML = dateTimeString;
+    }
+  </script>
+</head>
+
+<body style="background-color: #f3c48fdb;">
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(153, 90, 22)" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" id="logo" href="#">CoffeeBean</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="sitemap.html">Site Map</a></li>
+          <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="Cart.html">Cart</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br> <br>
+  <br> <br>
+
+
+  <header>
+    <h1>Customers Reviews</h1>
+  </header>
+
+  <div class="Customersreview">
+    <div class="review">
+      <h3>kareem alyasin</h3>
+      <p>Brazilian coffee beans offer a delightful and smooth flavor profile. With a medium body and low acidity,
+        the
+        brew exudes a natural sweetness, often featuring notes of chocolate and nuts. It's a well-balanced cup
+        that
+        caters to those who prefer a milder, yet rich, coffee experience. The Brazilian beans' inherent
+        sweetness makes
+        them a versatile choice, enjoyable both black and with milk.</p>
+    </div>
+
+    <div class="review">
+      <h3>faisal maharmeh</h3>
+      <p>Colombian coffee beans are renowned for their bright acidity and distinctively clean taste. The flavor
+        profile
+        often includes hints of citrus, berries, and a mild nuttiness. The acidity in Colombian coffee lends a
+        refreshing quality, making it an excellent choice for those who appreciate a vibrant and lively cup.
+        The beans'
+        well-defined character shines through, whether brewed as a single-origin pour-over or as the base for a
+        rich
+        espresso blend.</p>
+    </div>
+
+    <div class="review">
+      <h3>omar qasim</h3>
+
+      <p>Ethiopian coffee beans offer a unique and exotic taste experience. Known for their bright acidity and
+        complex
+        flavors, Ethiopian coffees often feature floral notes, fruity undertones, and a wine-like complexity.
+        The
+        aromatic qualities are captivating, with a range of flavors from jasmine and bergamot to tropical
+        fruits. For
+        those seeking a coffee adventure, Ethiopian beans are a journey into the diverse and captivating world
+        of
+        specialty coffee.</p>
+    </div>
+    <div class="review">
+      <h4>abdelrahman tamimi </h4>
+      <p>Coffee Bean Haven truly lives up to its name with a Bean Extravaganza that caters to all palates. From
+        the lush
+        hills of Brazil to the vibrant landscapes of Colombia and the high plateaus of Ethiopia, this coffee
+        shop takes
+        you on a global journey with its diverse coffee bean offerings..</p>
+    </div>
+
+  </div>
+
+  <div class="form-container">
+    <h2>Leave a Review</h2>
+    <form action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="user-review">Your Review:</label>
+      <textarea id="user-review" name="user-review" rows="4" required></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+  <span id="datetime"></span>
+  <script>
+    getCurrentDateTime();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
